@@ -74,6 +74,7 @@ public class Over {
         }
         // take turn after over.
         battingTeam.takeTurn();
+        bowlingTeam.changeBowler();
     }
     // overloaded function for second inning overs.
     public void start(int gameId, Team battingTeam, Team bowlingTeam, int targetScore){
@@ -106,6 +107,7 @@ public class Over {
 
         // take turn after over.
         battingTeam.takeTurn();
+        bowlingTeam.changeBowler();
     }
 
     @Override

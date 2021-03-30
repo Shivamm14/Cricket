@@ -1,5 +1,7 @@
 package com.example.cricket.model;
 
+import java.util.ArrayList;
+
 public class GameTeamStat {
     private int teamId, gameId;
     private String name;
@@ -58,4 +60,6 @@ public class GameTeamStat {
     public void setResult(String result) {
         this.result = result;
     }
+
+
 }

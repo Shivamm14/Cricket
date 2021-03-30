@@ -82,21 +82,21 @@ public class Game {
         // write initialize methods for game, game_team, game_player, game_team_player.
         // team and player table will not be touched, and will be initialized manually.
 
-        initializeGame();// to initialize game.
-        initializeGameTeam(teamOne.getTeamId(), teamTwo.getTeamId()); // to initialize game_team.
-        initializeGamePlayer(teamOne); //to initialize game_player for teamOne players.
-        initializeGamePlayer(teamTwo); // for teamTwo players.
-        initializeGameTeamPlayer(teamOne); // to initialize game_team_player.
-        initializeGameTeamPlayer(teamTwo);
-
-        // doing toss.
-        if(coinToss() == 0){
-            // teamOne bats
-            startMatch(teamOne, teamTwo);
-        }else{
-            // teamTwo bats
-            startMatch(teamTwo, teamOne);
-        }
+//        initializeGame();// to initialize game.
+//        initializeGameTeam(teamOne.getTeamId(), teamTwo.getTeamId()); // to initialize game_team.
+//        initializeGamePlayer(teamOne); //to initialize game_player for teamOne players.
+//        initializeGamePlayer(teamTwo); // for teamTwo players.
+//        initializeGameTeamPlayer(teamOne); // to initialize game_team_player.
+//        initializeGameTeamPlayer(teamTwo);
+//
+//        // doing toss.
+//        if(coinToss() == 0){
+//            // teamOne bats
+//            startMatch(teamOne, teamTwo);
+//        }else{
+//            // teamTwo bats
+//            startMatch(teamTwo, teamOne);
+//        }
 
     }
     // to make entry in game_team_player.

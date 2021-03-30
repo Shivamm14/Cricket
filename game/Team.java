@@ -227,4 +227,11 @@ public class Team {
                 ", bowler=" + bowler +
                 '}';
     }
+
+    public void changeBowler() {
+        int len = players.size();
+        Random rand = new Random();
+        int idx = rand.nextInt(len);
+        bowler = players.get(idx);
+    }
 }

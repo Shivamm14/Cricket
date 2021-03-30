@@ -198,4 +198,35 @@ public class Stat {
 
     }
 
+    public static TeamGameStat getTeamGameStat(int gameId, int teamId){
+
+        ArrayList<Integer> playerIdList = new ArrayList<>();
+        try{
+            Connection conn = Database.getConnection();
+            Statement st = conn.createStatement();
+            ResultSet rs;
+            String query = String.format("select player_id from game_team_player where game_id = %d and team_id = %d",
+                    gameId, teamId);
+            rs = st.executeQuery(query);
+            while(rs.next()){
+                playerIdList.add(rs.getInt("player_id"));
+            }
+            st.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        GameTeamStat gameTeamStat = getGameTeamStat(teamId, gameId);
+        ArrayList<GamePlayerStat> gamePlayerStatList = new ArrayList<>();
+        for(Integer playerId : playerIdList){
+            System.out.println("debug; "+ playerId);
+            GamePlayerStat gamePlayerStat = getGamePlayerStat(playerId, gameId);
+            gamePlayerStatList.add(gamePlayerStat);
+        }
+        TeamGameStat teamGameStat = new TeamGameStat(gameTeamStat, gamePlayerStatList);
+
+        return teamGameStat;
+
+
+    }
+
 }
